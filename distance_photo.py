@@ -8,7 +8,7 @@ import cv2
 import json
 
 # Constants
-PHOTO_PATH = "photos-test/50mm 2m.JPG"
+PHOTO_PATH = "photos-test/50mm 4m.jpg"
 SCALE_FACTOR = 6
 
 # Camera

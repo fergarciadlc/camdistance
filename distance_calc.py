@@ -22,6 +22,8 @@ def main():
 
     distance_cm = distance / 10
     distance_m = distance / 1000
+    
+    _, _ = sensor_width_mm, sensor_width_px # to keep the linter happy
 
     print(f"\n{distance} mm \n{distance_cm} cm\n{distance_m} m")
 

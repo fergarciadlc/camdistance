@@ -1,0 +1,13 @@
+{
+  "camera": {
+    "model": "Moto G7",
+    "focal_length": 3.95,
+    "sensor_height_mm": 5.62176,
+    "sensor_width_mm": 4.21632,
+    "sensor_height_px": 4608,
+    "sensor_width_px": 3456
+  },
+  "object": {
+    "height_mm": 220
+  }
+}
