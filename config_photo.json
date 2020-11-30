@@ -9,5 +9,9 @@
   },
   "object": {
     "height_mm": 220
+  },
+  "settings":{
+    "PHOTO_PATH": "photos-test/50mm 4m.pg",
+    "SCALE_FACTOR": 6
   }
 }

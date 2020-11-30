@@ -7,14 +7,17 @@ Created on Wed Nov 18 15:23:37 2020
 import cv2
 import json
 
-# Constants
-PHOTO_PATH = "photos-test/50mm 4m.jpg"
-SCALE_FACTOR = 6
-
-# Camera
-with open("config.json", "r") as fp:
+# Settings and constants
+with open("config_photo.json", "r") as fp:
     data = json.load(fp)
 object_height_mm = data["object"]["height_mm"]
+
+
+# Constants
+PHOTO_PATH = data["settings"]["PHOTO_PATH"]
+SCALE_FACTOR = data["settings"]["SCALE_FACTOR"]
+print("Photo:", PHOTO_PATH)
+print("Scale factor:", SCALE_FACTOR, "\n")
 
 
 class Camera:
