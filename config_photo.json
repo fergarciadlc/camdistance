@@ -11,7 +11,7 @@
     "height_mm": 220
   },
   "settings":{
-    "PHOTO_PATH": "photos-test/50mm 4m.pg",
+    "PHOTO_PATH": "photos-test/50mm 4m.jpg",
     "SCALE_FACTOR": 6
   }
 }

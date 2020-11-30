@@ -12,6 +12,25 @@ with open("config_photo.json", "r") as fp:
     data = json.load(fp)
 object_height_mm = data["object"]["height_mm"]
 
+# Validation data
+# Camera
+if type(data["camera"]["focal_length"]) not in [int, float]:
+    print("Invalid focal length"); exit()
+if (type(data["camera"]["sensor_height_mm"]) not in [int, float] 
+    or type(data["camera"]["sensor_width_mm"]) not in [int, float]):
+    print("Invalid sensor dimensions"); exit()
+if (type(data["camera"]["sensor_height_px"]) is not int
+    or type(data["camera"]["sensor_width_px"]) is not int):
+    print("Invalid sensor resolution"); exit()
+# Object
+if type(data["object"]["height_mm"]) not in [int, float]:
+    print("Invalid object dimensions"); exit()
+# Settings and photo file
+if type(data["settings"]["PHOTO_PATH"]) is not str:
+    print("Invalid photo file"); exit()
+if type(data["settings"]["SCALE_FACTOR"]) not in [int, float]:
+    print("Invalid scale factor"); exit()
+
 
 # Constants
 PHOTO_PATH = data["settings"]["PHOTO_PATH"]
@@ -51,6 +70,9 @@ print(f"\nObject height = {object_height_mm / 10:.4f} cm")
 
 # import image
 img = cv2.imread(PHOTO_PATH)
+if img is None:
+    print("Error loading photo, did you write correctly the filename?")
+    exit()
 img = cv2.resize(img, (int(img.shape[1] / SCALE_FACTOR), int(img.shape[0] / SCALE_FACTOR)))
 
 # Initial points
