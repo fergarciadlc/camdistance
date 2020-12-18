@@ -66,7 +66,7 @@ cam = Camera(
     sensor_width_px=data["camera"]["sensor_width_px"]
 )
 print(cam)
-print(f"\nObject height = {object_height_mm / 10:.4f} cm")
+print(f"\nObject height = {object_height_mm / 10:.2f} cm")
 
 # import image
 img = cv2.imread(PHOTO_PATH)
@@ -172,8 +172,9 @@ def draw_rectangle(event, x, y, flags, param):
 
 
 # Set windows and callback functions
-cv2.namedWindow(winname=PHOTO_PATH)
-cv2.setMouseCallback(PHOTO_PATH, draw_rectangle)
+winname = PHOTO_PATH + " - press esc to exit"
+cv2.namedWindow(winname=winname)
+cv2.setMouseCallback(winname, draw_rectangle)
 
 while True:
     if topLeft_clicked:
@@ -206,8 +207,8 @@ while True:
 
     if img_copy_flag:
         img = img_copy.copy()
-        cv2.imshow(PHOTO_PATH, img)
+        cv2.imshow(winname, img)
 
-    cv2.imshow(PHOTO_PATH, img)  # Name of actual window
+    cv2.imshow(winname, img)  # Name of actual window
 
 cv2.destroyAllWindows()
